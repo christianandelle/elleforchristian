@@ -1,35 +1,55 @@
-function openLetter(){
+// =========================
+// CREATE STARS
+// =========================
 
-document.querySelector(".envelope-page").style.display="none";
+const stars = document.getElementById("stars");
 
-document.getElementById("letterPage").classList.remove("hidden");
+for (let i = 0; i < 180; i++) {
 
-window.scrollTo(0,0);
+    const star = document.createElement("div");
+
+    star.className = "star";
+
+    star.style.left = Math.random() * 100 + "%";
+
+    star.style.top = Math.random() * 100 + "%";
+
+    star.style.animationDelay = Math.random() * 4 + "s";
+
+    star.style.animationDuration =
+        (2 + Math.random() * 4) + "s";
+
+    stars.appendChild(star);
 
 }
 
-const stars=document.getElementById("stars");
 
-for(let i=0;i<120;i++){
 
-const star=document.createElement("div");
+// =========================
+// OPEN LETTER
+// =========================
 
-star.style.position="fixed";
+function openLetter(){
 
-star.style.width="2px";
+const flap=document.querySelector(".top");
 
-star.style.height="2px";
+flap.style.transform="rotateX(180deg)";
 
-star.style.background="white";
+setTimeout(()=>{
 
-star.style.left=Math.random()*100+"vw";
+document.getElementById("envelopePage").style.display="none";
 
-star.style.top=Math.random()*100+"vh";
+const page=document.getElementById("letterPage");
 
-star.style.opacity=Math.random();
+page.style.display="block";
 
-star.style.borderRadius="50%";
+document.body.style.overflow="auto";
 
-stars.appendChild(star);
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
+},1000);
 
 }
