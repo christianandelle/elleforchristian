@@ -1,85 +1,396 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For My Baby ❤️</title>
+<title>To Christian ❤️</title>
 
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:linear-gradient(to bottom,#081225,#102544);
+
+font-family:'Cormorant Garamond',serif;
+
+overflow-x:hidden;
+
+color:white;
+
+}
+
+/* ---------- STARS ---------- */
+
+#stars{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+overflow:hidden;
+
+z-index:-1;
+
+}
+
+.star{
+
+position:absolute;
+
+width:2px;
+
+height:2px;
+
+background:white;
+
+border-radius:50%;
+
+animation:twinkle linear infinite;
+
+}
+
+@keyframes twinkle{
+
+0%,100%{
+opacity:.2;
+}
+
+50%{
+opacity:1;
+}
+
+}
+
+/* ---------- ENVELOPE PAGE ---------- */
+
+#landing{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+}
+
+.envelope{
+
+width:340px;
+
+height:220px;
+
+background:#f4e7d4;
+
+position:relative;
+
+border-radius:8px;
+
+box-shadow:0 20px 40px rgba(0,0,0,.45);
+
+animation:float 4s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+.flap{
+
+position:absolute;
+
+top:0;
+
+left:0;
+
+width:0;
+
+height:0;
+
+border-left:170px solid transparent;
+
+border-right:170px solid transparent;
+
+border-top:110px solid #ead7bd;
+
+transform-origin:top;
+
+transition:1s;
+
+z-index:5;
+
+}
+
+.preview{
+
+position:absolute;
+
+left:20px;
+
+top:70px;
+
+width:300px;
+
+height:120px;
+
+background:white;
+
+border-radius:5px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+color:#333;
+
+}
+
+.preview h2{
+
+font-family:'Dancing Script',cursive;
+
+font-size:40px;
+
+}
+
+.preview p{
+
+margin-top:10px;
+
+font-size:20px;
+
+}
+
+.seal{
+
+position:absolute;
+
+left:50%;
+
+top:105px;
+
+transform:translateX(-50%);
+
+width:70px;
+
+height:70px;
+
+border-radius:50%;
+
+background:#b22234;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:32px;
+
+cursor:pointer;
+
+box-shadow:0 0 20px rgba(255,80,80,.6);
+
+animation:pulse 2s infinite;
+
+z-index:20;
+
+}
+
+@keyframes pulse{
+
+50%{
+
+transform:translateX(-50%) scale(1.1);
+
+}
+
+}
+
+.note{
+
+margin-top:35px;
+
+font-size:22px;
+
+}
+
+/* ---------- LETTER ---------- */
+
+#letter{
+
+display:none;
+
+max-width:900px;
+
+margin:80px auto;
+
+background:#fffdf7;
+
+color:#333;
+
+padding:70px;
+
+border-radius:10px;
+
+box-shadow:0 25px 60px rgba(0,0,0,.5);
+
+line-height:2;
+
+}
+
+#letter h1{
+
+font-family:'Dancing Script',cursive;
+
+font-size:60px;
+
+text-align:center;
+
+margin-bottom:50px;
+
+}
+
+#letter p{
+
+font-size:25px;
+
+margin-bottom:22px;
+
+}
+
+.signature{
+
+text-align:right;
+
+font-family:'Dancing Script',cursive;
+
+font-size:42px;
+
+margin-top:60px;
+
+}
+
+.ps{
+
+margin-top:40px;
+
+border-top:1px solid #ddd;
+
+padding-top:30px;
+
+font-style:italic;
+
+}
+
+@media(max-width:768px){
+
+.envelope{
+
+transform:scale(.85);
+
+}
+
+#letter{
+
+width:92%;
+
+padding:35px;
+
+}
+
+#letter h1{
+
+font-size:42px;
+
+}
+
+#letter p{
+
+font-size:20px;
+
+}
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-<!-- Stars -->
 <div id="stars"></div>
 
-<!-- Envelope Page -->
+<div id="landing">
 
-<div id="envelopePage">
+<div class="envelope">
 
-    <div class="envelope-container">
+<div class="flap" id="flap"></div>
 
-        <div class="envelope">
+<div class="preview">
 
-            <div class="top"></div>
+<h2>To Christian.</h2>
 
-            <div class="bottom"></div>
-
-            <div class="letter-preview">
-
-                <h2>To Christian.</h2>
-
-                <p>
-                    Some letters are worth waiting for.
-                </p>
-
-            </div>
-
-            <div class="seal" onclick="openLetter()">
-
-                ❤️
-
-            </div>
-
-        </div>
-
-        <p class="instruction">
-            Click the heart to open your letter.
-        </p>
-
-    </div>
+<p>Some letters are worth waiting for.</p>
 
 </div>
 
-<!-- Letter -->
+<div class="seal" onclick="openLetter()">
 
-<div id="letterPage">
+❤️
 
-<div class="paper">
+</div>
+
+</div>
+
+<div class="note">
+
+Click the heart.
+
+</div>
+
+</div>
+
+<div id="letter">
 
 <h1>My dearest Christian,</h1>
-
-<div id="letterContent">
-
-<!--
-YOUR LETTER WILL GO HERE
--->
-
-</div>
-
-</div>
-
-</div>
-
-<script src="script.js"></script>
-
-</body>
-
-</html>
