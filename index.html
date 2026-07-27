@@ -418,3 +418,71 @@ Click the heart.
 <p>You amaze me more than you know.</p>
 
 <p>... (We'll continue the rest of your letter in the next step.)</p>
+
+  <div class="signature">
+
+— Elle ❤️
+
+</div>
+
+<div class="ps">
+
+<strong>P.S.</strong>
+
+Turns out a heart doesn't have to be whole to love completely.
+
+<br><br>
+
+Stay safe, always.
+
+</div>
+
+</div><script>
+
+const stars=document.getElementById("stars");
+
+for(let i=0;i<180;i++){
+
+const star=document.createElement("div");
+
+star.className="star";
+
+star.style.left=Math.random()*100+"%";
+
+star.style.top=Math.random()*100+"%";
+
+star.style.animationDuration=(2+Math.random()*4)+"s";
+
+star.style.animationDelay=Math.random()*4+"s";
+
+stars.appendChild(star);
+
+}
+
+function openLetter(){
+
+document.getElementById("flap").style.transform="rotateX(180deg)";
+
+setTimeout(()=>{
+
+document.getElementById("landing").style.display="none";
+
+document.getElementById("letter").style.display="block";
+
+window.scrollTo({
+
+top:0,
+
+behavior:"smooth"
+
+});
+
+},900);
+
+}
+
+</script>
+
+</body>
+
+</html>
