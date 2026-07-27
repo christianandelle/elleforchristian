@@ -140,6 +140,16 @@ transform:translateY(0px);
 ========================= */
 
 .envelope{
+    width:320px;
+    height:220px;
+    position:relative;
+
+    cursor:pointer;
+
+    animation:
+        float 4s ease-in-out infinite,
+        glow 3s ease-in-out infinite;
+}
 
 position:relative;
 
